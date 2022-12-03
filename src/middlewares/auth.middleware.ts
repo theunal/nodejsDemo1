@@ -17,12 +17,12 @@ const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
             if (verify)
                 return next()
             else
-                res.status(401).send()
+                return res.status(401).send()
         }
-        res.status(401).send()
+        return res.status(401).send()
     }
     catch (err) {
-        res.status(401).send()
+        return res.status(401).send()
     }
 }
 
