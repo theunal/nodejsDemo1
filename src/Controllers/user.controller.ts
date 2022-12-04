@@ -1,16 +1,25 @@
 import { Request, Response } from "express";
+import { CreateUserFormModel } from "../Entities/Models/FormModels/createUserFormModel";
 import { User } from "../Entities/User";
+import { CustomRequest } from "../routes/customRequest";
+import validationHelper from "../core/helpers/validation.helper";
+import createUserValidator from "../Business/Validators/createUserValidator";
 
-export const createUser = async (req: Request, res: Response) => {
+export const createUser = async (req: CustomRequest<CreateUserFormModel>, res: Response) => {
     try {
-        let user = new User()
-        user.FirstName = req.body.firstName
-        user.LastName = req.body.lastName
-        user.IsActive = true
 
-        await user.save()
+        let validate = validationHelper(createUserValidator, req.body, res)
+        if (!validate.Success)
+            return res.status(400).send(validate)
 
-        console.log(user)
+        // let user = new User()
+        // user.FirstName = req.body.firstName
+        // user.LastName = req.body.lastName
+        // user.IsActive = true
+
+        // await user.save()
+
+        // console.log(user)
 
         res.send('user created')
     }

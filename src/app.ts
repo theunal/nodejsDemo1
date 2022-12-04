@@ -6,11 +6,16 @@ import userRouter from './routes/user.route';
 import authRouter from './routes/auth.route';
 
 const app = express()
+
 app.use(morgan('dev'))
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:4200',
+    methods: 'GET,HEAD,PUT,POST,DELETE'
+}))
 app.use(express.json())
 app.use(userRouter)
 app.use(authRouter)
+
 env.config()
 
 export default app

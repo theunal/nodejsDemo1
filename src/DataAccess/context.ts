@@ -7,7 +7,7 @@ export const context = new DataSource({
     port: 5432,
     username: "postgres",
     password: "12345",
-    database: "FisDb2",
+    database: "Db1",
     logging: false,
     synchronize: true,
     entities: [

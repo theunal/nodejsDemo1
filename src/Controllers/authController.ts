@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import jwtHelper from "../helpers/jwt.helper";
+import jwtHelper from "../core/helpers/jwt.helper";
 
 export const register = (req: Request, res: Response) => {
 

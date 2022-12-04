@@ -6,7 +6,7 @@ const main = async () => {
     try {
         await context.initialize();
         console.log('database connected')
-        app.listen(3000)
+        app.listen(7077)
         console.log('server listening ')
     }
     catch (err) {
