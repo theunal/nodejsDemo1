@@ -24,5 +24,4 @@
 # import "reflect-metadata"; >> index.ts
 # "emitDecoratorMetadata": true >> tsconfig.json
 # "experimentalDecorators": true >> tsconfig.json
-
-# "strictPropertyInitialization": false,   
+# "strictPropertyInitialization": false
